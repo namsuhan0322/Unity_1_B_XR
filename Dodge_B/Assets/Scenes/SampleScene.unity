@@ -830,7 +830,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Best Record: 0'
+  m_Text: 'Best Time: 0'
 --- !u!222 &989463613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1311,6 +1311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3073962ceff25b946850280bfbb48acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameoverText: {fileID: 1058563373}
+  timeText: {fileID: 329093841}
+  recordText: {fileID: 989463612}
 --- !u!1 &1708780131
 GameObject:
   m_ObjectHideFlags: 0
