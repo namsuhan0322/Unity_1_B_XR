@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BulletSpawner : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class BulletSpawner : MonoBehaviour
     private float spawnRate;            // 생성 주기
     private float TimeAfterSpawn;       // 최근 생겅 시점에서 지난 시간
 
+    public AudioSource audioPlayer;
+
     void Start()
     {
         // 최근 생성 이후 누적시간을 0으로 초기화
@@ -22,6 +25,8 @@ public class BulletSpawner : MonoBehaviour
 
         // PlayerController 컴포넌트를 가진 게임 오브젝트를 찾아 조준 대상으로 설정
         target = FindObjectOfType<PlayerController>().transform;
+
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,6 +46,9 @@ public class BulletSpawner : MonoBehaviour
 
             // 다음 탄환 생성 주기 값(spawnRate를 최소(0.5초) 최대(0.3초) 범위에서 랜덥 값으로 결정작업 진행)
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+
+            // 포탄 생성시 포탄 발사음 실행
+            audioPlayer.Play();
         }
     }
 }

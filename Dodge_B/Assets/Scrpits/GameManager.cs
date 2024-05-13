@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private float surviverTime;         // 생존 시간
     private bool isGameOver;            // 게임오버 상태
 
+    public GameObject playerDie;
+
     void Start()
     {
         // 생존 시간과 게임오버 상태 초기화
@@ -64,5 +66,7 @@ public class GameManager : MonoBehaviour
         }
 
         recordText.text = "BestTIme : " + (int)bestTime;
+
+        playerDie.SetActive(true);
     }
 }
